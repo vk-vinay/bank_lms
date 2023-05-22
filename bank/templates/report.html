@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+<tr>
+    <th> Id </th>
+    <th> Balance </th>
+    <th> Leger </th>
+
+
+</tr>
+{% for result in results %}
+ <tr>
+    <th> {{ result.id }} </th>
+    <th> {{ result.balance }} </th>
+    <th {% if result.balance != result.ledger.ledger_balance %} style="color: crimson" {% endif %}> {{ result.ledger }} </th>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>
